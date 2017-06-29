@@ -1,6 +1,7 @@
 var WIDTH = document.body.clientWidth;
 var HEIGHT = window.innerHeight;
 var skipNframes = WIDTH * HEIGHT * 0.001;
+//skipNframes = 1;
 
 function Vector2D(x, y){
 	this.x = x;
@@ -23,6 +24,7 @@ function Node(x, y, z,positionX, positionY){
 	this.drawed = false;
 	this.position = new Vector2D(positionX, positionY);
 	this.parent = null;
+	this.processing = false;
 }
 
 function CheckBounds(vector2D){

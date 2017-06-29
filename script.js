@@ -13,17 +13,15 @@ function setup() {
 			graph[i][j] = new Node(255,255,255, j , i);
 		}
 	}
-
-	var startX = random(0, WIDTH);
-	var startY = random(0, HEIGHT);
-	startX = Math.floor(startX);
-	startY = Math.floor(startY);
-
 	background(255);
 }
 
 function mousePressed() {
-	algorithms.push(new DFS(graph[mouseY][mouseX] , skipNframes, Vector3D.random(), graph));
+  if(random() < 1){
+    algorithms.push(new DFS(graph[mouseY][mouseX] , skipNframes, Vector3D.random(), graph));
+  }else{
+    algorithms.push(new BFS(graph[mouseY][mouseX] , skipNframes, Vector3D.random(), graph));
+  }
   return false;
 }
 

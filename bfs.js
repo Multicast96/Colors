@@ -1,4 +1,4 @@
-function DFS(startNode, skipNframes, startColor, graph) {
+function BFS(startNode, skipNframes, startColor, graph) {
   this.stack = [];
   this.stack.push(startNode);
   this.skipNframes = skipNframes;
@@ -8,15 +8,15 @@ function DFS(startNode, skipNframes, startColor, graph) {
 
   this.nextStep = function(){
     if(this.stack.length == 0) return;
-    var node = this.stack.pop();
+    var node = this.stack.shift();
     node.visited = true;
 
     /* Kolorowanie wierzchołka */
     if(node.parent != null){
-      if(random() < 0.2){
-       node.color.x = node.parent.color.x * random(0.999 , 1);
-       node.color.y = node.parent.color.y * random(0.999 , 1);
-       node.color.z = node.parent.color.z * random(0.999 , 1);
+      if(random() < 0.5){
+       node.color.x = node.parent.color.x * random(0.99 , 1);
+       node.color.y = node.parent.color.y * random(0.99, 1);
+       node.color.z = node.parent.color.z * random(0.99 , 1);
      }else{
        node.color.x = node.parent.color.x;
        node.color.y = node.parent.color.y;
@@ -25,7 +25,7 @@ function DFS(startNode, skipNframes, startColor, graph) {
     }
 
     var tmp; /* Tymczasowa zmienna do wyznaczania sąsiadów wierzchołka*/
-    var arr = [0,1,2,3,4,5,6,7];
+    var arr = [1,3,6,7];
     arr = shuffle(arr);
 
     for(var i = 0; i < arr.length;i++){
