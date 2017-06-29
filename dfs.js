@@ -7,7 +7,7 @@ function DFS(startNode, skipNframes, startColor, graph) {
   startNode.color = startColor;
 
   this.nextStep = function(){
-    if(this.stack.length == 0) return;
+    if(this.stack.length == 0) return false;
     var node = this.stack.pop();
     node.visited = true;
 
@@ -63,5 +63,6 @@ function DFS(startNode, skipNframes, startColor, graph) {
         }
       }
     }
+    return true;
   };
 }

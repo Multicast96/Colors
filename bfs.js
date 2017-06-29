@@ -7,8 +7,14 @@ function BFS(startNode, skipNframes, startColor, graph) {
   startNode.color = startColor;
 
   this.nextStep = function(){
-    if(this.stack.length == 0) return;
-    var node = this.stack.shift();
+    if(this.stack.length == 0) return false;
+    var node;
+
+    if(random() < 0.2){
+      node = this.stack.pop();
+    }else{
+      node = this.stack.shift();
+    }
     node.visited = true;
 
     /* Kolorowanie wierzchołka */
@@ -25,7 +31,7 @@ function BFS(startNode, skipNframes, startColor, graph) {
     }
 
     var tmp; /* Tymczasowa zmienna do wyznaczania sąsiadów wierzchołka*/
-    var arr = [1,3,6,7];
+    var arr = [1,2,3,4,5,6,7];
     arr = shuffle(arr);
 
     for(var i = 0; i < arr.length;i++){
@@ -63,5 +69,6 @@ function BFS(startNode, skipNframes, startColor, graph) {
         }
       }
     }
+    return true;
   };
 }

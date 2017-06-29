@@ -1,6 +1,6 @@
 var WIDTH = document.body.clientWidth;
 var HEIGHT = window.innerHeight;
-var skipNframes = WIDTH * HEIGHT * 0.001;
+var skipNframes = WIDTH * HEIGHT * 0.0005;
 //skipNframes = 1;
 
 function Vector2D(x, y){
@@ -15,7 +15,7 @@ function Vector3D(x, y, z){
 }
 
 Vector3D.random = function(){
-  return new Vector3D(random(255), random(255), random(255));
+  return new Vector3D(random(100,255), random(100,255), random(100,255));
 }
 
 function Node(x, y, z,positionX, positionY){

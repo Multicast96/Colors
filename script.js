@@ -17,7 +17,7 @@ function setup() {
 }
 
 function mousePressed() {
-  if(random() < 1){
+  if(random() < 0.5){
     algorithms.push(new DFS(graph[mouseY][mouseX] , skipNframes, Vector3D.random(), graph));
   }else{
     algorithms.push(new BFS(graph[mouseY][mouseX] , skipNframes, Vector3D.random(), graph));
@@ -28,7 +28,7 @@ function mousePressed() {
 function draw(){
 	for(var j = 0; j < algorithms.length;j++){
 		for(var i = 0; i < algorithms[j].skipNframes;i++){
-			algorithms[j].nextStep();
+			if(!algorithms[j].nextStep()) break;
 		}
 	}
 
