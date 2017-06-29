@@ -14,9 +14,9 @@ function DFS(startNode, skipNframes, startColor, graph) {
     /* Kolorowanie wierzchołka */
     if(node.parent != null){
       if(random() < 0.2){
-       node.color.x = node.parent.color.x * random(0.999 , 1);
-       node.color.y = node.parent.color.y * random(0.999 , 1);
-       node.color.z = node.parent.color.z * random(0.999 , 1);
+       node.color.x = node.parent.color.x * random(0.9995 , 1);
+       node.color.y = node.parent.color.y * random(0.9995 , 1);
+       node.color.z = node.parent.color.z * random(0.9995 , 1);
      }else{
        node.color.x = node.parent.color.x;
        node.color.y = node.parent.color.y;
